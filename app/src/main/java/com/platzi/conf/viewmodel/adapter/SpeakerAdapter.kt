@@ -1,29 +1,29 @@
 package com.platzi.conf.viewmodel.adapter
 
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.firebase.firestore.core.View
+import com.bumptech.glide.request.RequestOptions
 import com.platzi.conf.R
 import com.platzi.conf.model.Speaker
 
 class SpeakerAdapter(val speakerListener: SpeakerListener) : RecyclerView.Adapter<SpeakerAdapter.ViewHolder>() {
 
-    var listSpeakers = ArrayList<Speaker>()
+    private var listSpeakers = ArrayList<Speaker>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.item_speaker, parent, false)
-    )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(
+        R.layout.item_speaker, parent, false))
 
     override fun getItemCount() = listSpeakers.size
 
-    override fun onBindViewHolder(holder: SpeakerAdapter.ViewHolder, position: Int) {
-        val speaker = listSpeakers[position] as Speaker
-
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val speaker = listSpeakers[position]
         holder.tvSpeakerName.text = speaker.name
-        holder.tvSpeakerWork.text = speaker.workplace
+        holder.tvSpeakerWork.text = speaker.workspace
 
         Glide.with(holder.itemView.context)
             .load(speaker.image)

@@ -32,13 +32,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
+                        android:id="@+id/ivItemSpeakerImage"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         android:layout_centerInParent="true"
-                        android:src="@drawable/foto_perfil"
-                        app:civ_border_width="4dp"
-                        app:civ_border_color="@color/varianteSecundario"/>
+                        android:src="@drawable/foto_perfil" />
 
                 </RelativeLayout>
 
@@ -55,7 +54,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tvDailConferenceHour"
+                            android:id="@+id/tvItemSpeakerName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
@@ -66,7 +65,7 @@
                             android:textSize="@dimen/TituloDitailSpeker" />
 
                         <TextView
-                            android:id="@+id/tvDailConferenceSpeaker"
+                            android:id="@+id/tvItemSpeakerWork"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"

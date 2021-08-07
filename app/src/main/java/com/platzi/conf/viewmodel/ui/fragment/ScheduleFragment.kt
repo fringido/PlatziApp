@@ -42,11 +42,11 @@ class ScheduleFragment : Fragment(), ScheduleListener {
     }
 
     fun observeViewModel(){
-        viewModel.listSchedule.observe(viewLifecycleOwner, Observer<List<Conference>>{ schedule ->
+        viewModel.listUser.observe(viewLifecycleOwner, Observer<List<Schedule>>{ schedule ->
             scheduleAdapter.updateData(schedule)
         })
 
-        viewModel.isLoading.observe(this, Observer<Boolean> {
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer<Boolean> {
             if(it != null )
                 rlBaseSchedule.visibility = View.INVISIBLE
         })

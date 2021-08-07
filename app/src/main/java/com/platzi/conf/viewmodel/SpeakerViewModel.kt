@@ -7,7 +7,7 @@ import com.platzi.conf.network.FirestoreService
 
 class SpeakerViewModel {
     val firestoreService = FirestoreService()
-    var listSpeaker: MutableLiveData<List<Speaker> = MutableLiveData()
+    var listSpeaker: MutableLiveData<List<Speaker>> = MutableLiveData()
     var isLoading = MutableLiveData<Boolean>()
 
     fun refresh(){

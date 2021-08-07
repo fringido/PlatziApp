@@ -5,9 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.platzi.conf.R
 import com.platzi.conf.model.Conference
+import com.platzi.conf.R
 import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+
+
 
 class SchedualeAdapter(val scheduleListener: ScheduleListener) : RecyclerView.Adapter<SchedualeAdapter.ViewHolder>(){
 
@@ -26,6 +30,7 @@ class SchedualeAdapter(val scheduleListener: ScheduleListener) : RecyclerView.Ad
 
         val simpleDataFormat = SimpleDateFormat("HH:mm")
         val simpleDateformatAMPM = SimpleDateFormat("a")
+        val cal = Calendar.getInstance()
         cal.time = conference.datetime
         val hourFormat = simpleDataFormat.format(conference.datetime)
 
